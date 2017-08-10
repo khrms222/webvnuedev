@@ -1,0 +1,221 @@
+﻿
+@{
+    ViewBag.Title = "Settings";
+}
+
+<div class="container">
+    <div class="row profile">
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+                <!-- SIDEBAR USERPIC
+                <div class="profile-userpic" align="center">
+                    <img alt="User Pic" src="~/Images/avatar.jpg" class="img-thumbnail">
+
+
+                </div>
+                -->
+                <br />
+                <!-- END SIDEBAR USERPIC -->
+                <!-- SIDEBAR USER TITLE -->
+                @*               <div class="usertitle">
+                        <div class="usertitle-name">
+                            <span class="hidden-xs">@currentUser.FirstName @currentUser.LastName</span>
+                        </div>
+                        <div class="profile-usertitle-job">
+                            <span class="hidden-xs">CEO</span>
+                        </div>
+                    </div>
+                *@
+                <!-- END SIDEBAR USER TITLE -->
+                <!-- SIDEBAR MENU -->
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li class="active">
+                            <a data-toggle="tab" href="#accountinfo">
+                                <i class="glyphicon glyphicon-home"></i>
+                                <span class="hidden-xs">Account Info</span>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#referrals">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <span class="hidden-xs">My Referrals</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#webvnueearned">
+                                <i class="glyphicon glyphicon-ok"></i>
+                                <span class="hidden-xs">Webvnue Earned</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#reflink">
+                                <i class="glyphicon glyphicon-flag"></i>
+                                <span class="hidden-xs">Referral Link</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- END MENU -->
+            </div>
+        </div>
+        <div class="tab-content">
+            <div id="accountinfo" class="tab-pane active">
+                <div class="col-md-9 order-content">
+
+                    <div class="form_main col-md-4 col-sm-5 col-xs-7">
+                        <h4 class="heading"><strong>Account </strong> Info <span></span></h4>
+                        <div class="form">
+                            <div class=" col-md-9 col-lg-9 ">
+                                <table class="table table-user-information">
+                                    <tbody>
+                                        <tr>
+                                            <td>Name:</td>
+                                            <td>Josh Peterson</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email:</td>
+                                            <td>jtpeterson2011@gmail.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date of Birth</td>
+                                            <td>7/4/1969</td>
+                                        </tr>
+
+                                        <tr>
+                                        <tr>
+                                            <td>Email Confirmed:</td>
+                                            <td><button class="btn btn-primary" id="email-button">Send Email</button></td>
+                                            @*
+                                            @if (@currentUser.EmailConfirmed == true)
+                                            {
+                                                <td>Confirmed</td>
+                                            }
+                                            else
+                                            {
+                                                <td><button class="btn btn-primary" id="email-button">Send Email</button></td>
+                                            }
+                                                *@
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Subscription:</td>
+                                            <td><a href="/services/subscribe" class="btn btn-primary">Subscribe</a></td>
+                                            @*
+                                            @if (@currentUser.Subscription == true)
+                                            {
+                                                <td><button class="btn btn-primary" id="unsubscribe-button">Unsubscribe</button></td>
+                                            }
+                                            else
+                                            {
+                                                <td><a href="/services/subscribe" class="btn btn-primary">Subscribe</a></td>
+                                            }
+                                                *@
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <a href="#" class="btn btn-primary">Update Account Info</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="referrals" class="tab-pane">
+                <div class="col-md-9 order-content">
+
+                    <div class="form_main col-md-4 col-sm-5 col-xs-7">
+                        <h4 class="heading"><strong>Referrals </strong><span></span></h4>
+                        <div class="form">
+                            <div class="col-md-12 col-lg-12">
+                                <h2>You have no referrals!</h2>
+                                @*
+                                @if (referralList != null)
+                                {
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                        </tr>
+                                        @foreach (var referral in referralList)
+                                        {
+                                            <tr>
+                                                <td>@referral.FirstName @referral.LastName</td>
+                                                <td>@referral.UserName</td>
+                                                <td>@referral.Email</td>
+                                            </tr>
+                                        }
+                                    </table>
+                                }
+                                else
+                                {
+                                    <h2>You have no referral(s)!</h2>
+                                }
+                                    *@
+
+                                <!--
+                                    Write code for referrals here
+                                    <img src="~/Images/a4.jpg" />
+                                    -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="webvnueearned" class="tab-pane">
+                <div class="col-md-9 order-content">
+
+                    <div class="form_main col-md-4 col-sm-5 col-xs-7">
+                        <h4 class="heading"><strong>Webvnue </strong> Earned <span></span></h4>
+                        <div class="form">
+                            <div class="col-md-9 col-lg-9">
+
+                                <div class="webvnue-earned">
+                                    <h2>Webvnue monthly income: $0</h2>
+                                </div>
+                                <!--
+                                    Write code for webvnue earned here
+                                    <img src="~/Images/a4.jpg" />
+                                    -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="reflink" class="tab-pane">
+                <div class="col-md-9 order-content">
+
+                    <div class="form_main col-md-4 col-sm-5 col-xs-7">
+                        <h4 class="heading"><strong>Referral </strong> Link <span></span></h4>
+                        <div class="form">
+                            <div class="col-md-12 col-lg-12">
+                                <button class="btn btn-default" id="refbutton">Show link</button>
+                                <div id="referral-link" style="display:none;">
+                                    <br />
+                                    @Url.Action("register", "account", new { Token = "123456" }, Request.Url.Scheme)
+                                </div>
+
+                                <!--
+                                    Write code for Ref link here
+                                    <img src="~/Images/a3.jpg" />
+                                    <input type="button" name="answer" value="Show Div" onclick="showReferralLink()" />
+                                    -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

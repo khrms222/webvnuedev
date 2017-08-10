@@ -53,5 +53,21 @@ namespace Webvnue.DatabaseLayer.DatabaseLayer
             return result;
         }
 
+        public static void insertReferral(string id, string referrer, string referent)
+        {
+            string storedProcedure = "INSERT_REFERRAL";
+            SqlCommand cmd = new SqlCommand(storedProcedure, connection);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@referrer", referrer);
+            cmd.Parameters.AddWithValue("@referent", referent);
+
+            connection.Open();
+
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+        }
+
     }
 }

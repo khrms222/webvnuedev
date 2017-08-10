@@ -42,6 +42,23 @@ namespace Webvnue.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult Register(RegisterViewModel vm, string Token)
+        {
+
+            if (!ModelState.IsValid)
+            {
+
+                return View(vm);
+            }
+            else
+            {
+                vm.HandleRequest();
+
+                return RedirectToAction("Index");
+            }
+        }
+
         public ActionResult Login()
         {
             LoginViewModel vm = new LoginViewModel();
@@ -74,7 +91,7 @@ namespace Webvnue.Controllers
                     authManager.SignIn(new AuthenticationProperties
                     { IsPersistent = vm.rememberme }, identity);
 
-                    return RedirectToAction("Index");
+                    return Redirect(Url.Content("~/"));
                 }
                 else
                 {
@@ -88,6 +105,11 @@ namespace Webvnue.Controllers
         {
             Request.GetOwinContext().Authentication.SignOut("ApplicationCookie");
             return RedirectToAction("Login");
+        }
+
+        public ActionResult Settings()
+        {
+            return View();
         }
 
     }
