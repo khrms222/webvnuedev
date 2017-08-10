@@ -42,23 +42,6 @@ namespace Webvnue.Controllers
             }
         }
 
-        [HttpPost]
-        public ActionResult Register(RegisterViewModel vm, string Token)
-        {
-
-            if (!ModelState.IsValid)
-            {
-
-                return View(vm);
-            }
-            else
-            {
-                vm.HandleRequest();
-
-                return RedirectToAction("Index");
-            }
-        }
-
         public ActionResult Login()
         {
             LoginViewModel vm = new LoginViewModel();
